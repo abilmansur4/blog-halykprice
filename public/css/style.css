@@ -1,0 +1,9 @@
+.cards-block {
+    background-color: wheat; 
+}
+
+@media(max-width: 768px){
+    .card-text{
+        writing-mode: vertical-lr
+    }
+}

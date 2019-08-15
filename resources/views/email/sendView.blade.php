@@ -1,0 +1,1 @@
+Запрос на регистрацию для пользователя <b>{{$user->name}}</b>. Чтобы активировать аккаунт нажмите на <a href="{{route('sendEmailDone', ["name" => $user->name, "verifyToken" => $user-> verifyToken])}}">ссылку</a>

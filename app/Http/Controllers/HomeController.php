@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
+use App\Follower;
 use Auth;
 
 class HomeController extends Controller
@@ -25,17 +26,17 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        return view('home');
+        $result = Follower::descendantsOf(Auth::user()->id);
+        return view('home', ['users' => $result]);
+    }
+
+    public function getFollowerById() {
+        $result = Follower::descendantsOf(Auth::user()->id);
+        return view('home', ['users' => $result]);
     }
 
     public function profile() {
         return view('profile');
-    }
-
-    public function getChildren() {
-        $name = Auth::user()->name;
-        $data = User::where(['sponsorname' => $name])->get();
-        return view('treeview', ['data' => $data]);
     }
     
 }

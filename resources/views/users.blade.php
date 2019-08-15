@@ -16,14 +16,9 @@
                     <h1>
                         USERS
                     </h1>   
-                    <?php
-                    foreach ($users as $user) {
-                        echo $user->user_id;
-                        echo " ";
-                        echo $user->stage;
-                        echo " ";
-                    }
-                    ?>
+                    
+                    
+                   
                     
                 </div>
             </div>
